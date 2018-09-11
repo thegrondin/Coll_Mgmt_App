@@ -15,7 +15,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\CollectionModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Item.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataService\BaseHttpClient\GenericRestfulHttpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataService\BaseHttpClient\IGenericRestfulHttpClient.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataService\CollectionRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataService\ICollectionRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataService\IItemRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DataService\ItemRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\IDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\MockDataStore.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />

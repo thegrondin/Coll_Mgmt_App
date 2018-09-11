@@ -4,8 +4,8 @@ namespace Coll_Mgmt_App.Models
 {
     public class Item
     {
-        public string Id { get; set; }
-        public string Text { get; set; }
+        public int ItemId { get; set; }
+        public string Name { get; set; }
         public string Description { get; set; }
     }
 }
