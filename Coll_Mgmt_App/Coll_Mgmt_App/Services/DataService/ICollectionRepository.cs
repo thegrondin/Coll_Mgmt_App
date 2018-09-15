@@ -10,7 +10,7 @@ namespace Coll_Mgmt_App.Services.DataService
         Task<bool> AddCollectionAsync(T collection);
         Task<bool> RemoveCollectionAsync(string id);
         Task<T> GetCollectionAsync(string id);
-        Task<T> GetFieldsFromCollection(string id, List<string> fields);
+        Task<object> GetFieldsFromCollection(string id, List<string> fields);
         Task<IEnumerable<T>> GetCollectionsAsync();
         Task<IEnumerable<object>> GetFieldsFromCollections(List<string> fields);
     }

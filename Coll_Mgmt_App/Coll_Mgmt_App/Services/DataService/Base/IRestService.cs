@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Coll_Mgmt_App.Services.DataService.Base
 {
-    interface IRestService
+    public interface IRestService
     {
         Task<T> RefreshAsync<T>(Uri uri);
         Task<bool> AddAsync<T>(Uri uri, T item);

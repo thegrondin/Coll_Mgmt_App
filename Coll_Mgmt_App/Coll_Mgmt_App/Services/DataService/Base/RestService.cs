@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Coll_Mgmt_App.Services.DataService.Base
 {
-    class RestService : IRestService
+    public abstract class RestService : IRestService
     {
         HttpClient _client;
         public RestService(HttpClient client)

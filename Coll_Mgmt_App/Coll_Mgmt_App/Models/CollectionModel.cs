@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Coll_Mgmt_App.Models
 {
-    class CollectionModel
+    public class CollectionModel
     {
         public int CollectionModelId { get; set; }
         public string Name { get; set; }
