@@ -2,11 +2,13 @@
 using Coll_Mgmt_App.Services.DataService;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Dynamic;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace Coll_Mgmt_App.ViewModels
 {
@@ -15,10 +17,13 @@ namespace Coll_Mgmt_App.ViewModels
     {
         private ICollectionRepository<CollectionModel> _collectionRepository;
 
-        public List<string> CollectionsName { get; set; }
+        public ObservableCollection<string> CollectionsName { get; set; }
+        public Command LoadCollectionsNameCommand { get; set; }
 
         public CollectionViewModel(ICollectionRepository<CollectionModel> collectionRepository)
         {
+            CollectionsName = new ObservableCollection<string>();
+            LoadCollectionsNameCommand = new Command(async () => await ExecuteLoadCollectionsNameCommand());
             _collectionRepository = collectionRepository;
         }
 
