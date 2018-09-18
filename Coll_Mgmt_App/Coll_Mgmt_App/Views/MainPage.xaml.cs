@@ -14,26 +14,25 @@ namespace Coll_Mgmt_App.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainPage : MasterDetailPage
 	{
+        private NavigationViewModel _navigationViewModel;
 		public MainPage ()
 		{
             
 
             InitializeComponent ();
 
-            BindingContext = new NavigationViewModel();
+            _navigationViewModel = new NavigationViewModel();
+
+            BindingContext = _navigationViewModel;
+
+            masterPage.listView.ItemSelected += OnItemSelected;
         }
 
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var item = e.SelectedItem as MasterPageItem;
-            if (item != null)
-            {
-                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-                masterPage.listView.SelectedItem = null;
-                IsPresented = false;
-            }
+            _navigationViewModel.ChangeMasterDetailCommand.Execute(e.SelectedItem);
+            Detail = _navigationViewModel.CurrentPage;
         }
     }
-}
 }

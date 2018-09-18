@@ -12,7 +12,7 @@ namespace Coll_Mgmt_App.ViewModels
     class NavigationViewModel : BaseViewModel
     {
         public ICommand ChangeMasterDetailCommand { get; set; }
-        public NavigationPage Detail { get; set; }
+        public NavigationPage CurrentPage { get; set; }
         public NavigationViewModel()
         {
             ChangeMasterDetailCommand = new Command(async (masterPageItem) => await ExecuteChangeMasterDetailCommand(masterPageItem));
@@ -30,7 +30,7 @@ namespace Coll_Mgmt_App.ViewModels
 
                 if (item != null)
                 {
-                    TestLocator.MainPageLocator.Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+                    CurrentPage = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
                 }
             }
             catch (Exception ex)
