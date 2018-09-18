@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Coll_Mgmt_App.Views;
 using Xamarin.Forms.Xaml;
+using Coll_Mgmt_App.Models;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace Coll_Mgmt_App
@@ -15,6 +16,7 @@ namespace Coll_Mgmt_App
 
 
 			MainPage = new MainPage();
+
 		}
 
 		protected override void OnStart ()

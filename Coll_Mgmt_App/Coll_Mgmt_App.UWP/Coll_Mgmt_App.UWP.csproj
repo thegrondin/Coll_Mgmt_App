@@ -4,7 +4,8 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{50F78616-80A8-455E-89B9-BC4026887C2D}</ProjectGuid>
+    <ProjectGuid>{CF8D1B62-86D8-4D4B-BB42-794992667F38}</ProjectGuid>
+    <TemplateGuid>{98C37F10-6541-44BE-B1E6-7EB3EB8C08F1}</TemplateGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Coll_Mgmt_App.UWP</RootNamespace>
@@ -133,6 +134,8 @@
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="xamarin_logo.png" />
     <Content Include="add.png" />
+    <Content Include="save.png" />
+    <Content Include="cancel.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -148,10 +151,15 @@
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.2</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="3.0.0.482510" />
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="3.1.0.697729" />
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.5" />
   </ItemGroup>
-  <Import Project="..\Coll_Mgmt_App\Coll_Mgmt_App.projitems" Label="Shared" />
+  <ItemGroup>
+    <ProjectReference Include="..\Coll_Mgmt_App\Coll_Mgmt_App.csproj">
+      <Project>{040691DA-B5FC-4196-861B-2944854740BB}</Project>
+      <Name>Coll_Mgmt_App</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

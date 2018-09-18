@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="using:Coll_Mgmt_App.Views"
+             xmlns:model="using:Coll_Mgmt_App.Models"
+             x:Class="Coll_Mgmt_App.Views.MasterPage"
+             Padding="0,40,0,0"
+             Title="Collection Management">
+    <ContentPage.Content>
+        <ListView x:Name="listView" x:FieldModifier="public">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type model:MasterPageItem}">
+                    <model:MasterPageItem Title="Page 1" TargetType="{x:Type local:Page1}" />
+                    <model:MasterPageItem Title="Page 2" TargetType="{x:Type local:Page2}" />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Label Text="{Binding Title}" />
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
